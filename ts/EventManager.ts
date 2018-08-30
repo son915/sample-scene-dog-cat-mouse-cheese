@@ -1,4 +1,4 @@
-import { EventSubscriber } from "metaverse-api";
+import { EventSubscriber } from "decentraland-api";
 
 export namespace EventManager
 {

@@ -1,4 +1,4 @@
-import * as DCL from 'metaverse-api'
+import * as DCL from 'decentraland-api'
 import { IAnimalProps, AnimationType } from '../ts/SharedProperties';
 
 export const Mouse = (props: IAnimalProps) =>

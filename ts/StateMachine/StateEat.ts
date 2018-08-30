@@ -4,7 +4,7 @@ import { AnimationType, IAnimalProps } from "ts/SharedProperties";
 import { lengthSquared, subtract } from "ts/MathHelper";
 import { StateGoTo, IStateGoToConfig } from "ts/StateMachine/StateGoTo";
 import { EventManager } from "ts/EventManager";
-import { Vector3Component } from "metaverse-api";
+import { Vector3Component } from "decentraland-api";
 import { IStateIdleConfig } from "ts/StateMachine/StateIdle";
 import { StateDespawn } from "ts/StateMachine/StateDespawn";
 

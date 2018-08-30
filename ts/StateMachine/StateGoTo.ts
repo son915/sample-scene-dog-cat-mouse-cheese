@@ -1,4 +1,4 @@
-import { Vector3Component } from "metaverse-api";
+import { Vector3Component } from "decentraland-api";
 import { AnimalState } from "ts/StateMachine/AnimalState";
 import { IAnimalProps, AnimationType } from "ts/SharedProperties";
 import { setInterval, clearInterval } from "timers";

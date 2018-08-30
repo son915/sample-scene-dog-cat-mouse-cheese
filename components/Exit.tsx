@@ -1,4 +1,4 @@
-import * as DCL from 'metaverse-api'
+import * as DCL from 'decentraland-api'
 import { ISceneryProps } from '../ts/SharedProperties';
 
 export const Exit = (props: ISceneryProps) =>

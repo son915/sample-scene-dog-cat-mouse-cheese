@@ -1,6 +1,6 @@
 const config = require('./config.json');
-import * as DCL from 'metaverse-api';
-import { Vector3Component } from 'metaverse-api';
+import * as DCL from 'decentraland-api';
+import { Vector3Component } from 'decentraland-api';
 import * as SceneHelper from 'ts/SceneHelper';
 import { Dog } from 'components/Dog';
 import { Cat } from 'components/Cat';

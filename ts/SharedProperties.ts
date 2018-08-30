@@ -1,4 +1,4 @@
-import { Vector3Component } from "metaverse-api";
+import { Vector3Component } from "decentraland-api";
 
 export interface ISceneryProps
 {

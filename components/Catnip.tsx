@@ -1,4 +1,4 @@
-import * as DCL from 'metaverse-api'
+import * as DCL from 'decentraland-api'
 import { IBaitProps } from 'ts/SharedProperties';
 
 function renderBase(props: IBaitProps)

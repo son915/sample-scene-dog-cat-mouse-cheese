@@ -1,4 +1,4 @@
-import { Vector3Component } from 'metaverse-api';
+import { Vector3Component } from 'decentraland-api';
 
 export function add(a: Vector3Component, b: Vector3Component): Vector3Component
 {

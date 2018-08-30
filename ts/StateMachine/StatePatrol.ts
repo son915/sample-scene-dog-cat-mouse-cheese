@@ -1,6 +1,6 @@
 import { AnimalStateMachine } from "ts/StateMachine/AnimalStateMachine";
 import { AnimalState } from "ts/StateMachine/AnimalState";
-import { Vector3Component } from "metaverse-api";
+import { Vector3Component } from "decentraland-api";
 import { IAnimalProps, AnimalType } from "ts/SharedProperties";
 import { lengthSquared, subtract, inSphere } from "ts/MathHelper";
 import { StateEat, IStateEatConfig } from "ts/StateMachine/StateEat";

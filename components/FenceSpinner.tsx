@@ -1,4 +1,4 @@
-import * as DCL from 'metaverse-api'
+import * as DCL from 'decentraland-api'
 import { ISceneryProps } from '../ts/SharedProperties';
 
 export enum SpinState

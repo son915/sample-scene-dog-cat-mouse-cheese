@@ -1,4 +1,4 @@
-import { Vector3Component } from "metaverse-api";
+import { Vector3Component } from "decentraland-api";
 import { add, round, inSphere, lengthSquared, subtract } from "ts/MathHelper";
 import { EventManager } from "ts/EventManager";
 const aStar = require('a-star');
