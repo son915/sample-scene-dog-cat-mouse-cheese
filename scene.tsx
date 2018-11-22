@@ -25,16 +25,20 @@ import { StateDespawn } from 'ts/StateMachine/StateDespawn';
 import { FenceCorner } from 'components/FenceCorner';
 import { FenceSpinner, SpinState } from 'components/FenceSpinner';
 
+
 export default class DogCatMouseCheese extends DCL.ScriptableScene
 {
 	// Data
 	baitType: keyof typeof BaitType = config.baitType;
 	state: {
+		
 		animals: IAnimalProps[],
 		trees: ISceneryProps[],
 		fenceSpinState: SpinState[],
 		baitProps: IBaitProps,
+	
 	} = {
+			
 			animals: [],
 			trees: [],
 			fenceSpinState: [SpinState.None, SpinState.None],
@@ -42,6 +46,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 				id: config.baitType,
 				position: { x: 21, y: 0, z: 5 },
 				isVisible: true,
+				isDoorClosed: true,
 				baitType: BaitType[this.baitType]
 			},
 		};
@@ -59,7 +64,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 
 		this.eventSubscriber.on("Entrance_click", e => this.onEntranceClick());
 		this.eventSubscriber.on("House_click", e => this.onHouseClick());
-
+		this.eventSubscriber.on("door_click", () => {this.setState({ isDoorClosed: !this.state.isDoorClosed })});
 		this.eventSubscriber.on('renderAnimals', e => this.onRenderAnimals());
 		this.eventSubscriber.on('captureBait', e => this.onCaptureBait());
 		this.eventSubscriber.on('despawn', (animalId, delay) => this.onDespawn(animalId, delay));
@@ -113,7 +118,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		}
 		this.setState({ trees });
 	}
-
+	
 	// Events
 	onEntranceClick()
 	{ // Spawn prey
@@ -290,8 +295,27 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	}
 	async render()
 	{
+		const doorRotation = {
+			x: this.state.isDoorClosed ? -20 : 0,
+			y: 90,
+			z: 0,
+
+		}
+
 		return (
 			<scene>
+				<entity
+				
+					rotation={doorRotation}
+					transition={{ rotation: { duration: 1000, timing: "ease-in" } }}
+		 		 >
+				<box
+					  id="door"
+			 	      scale={{ x: 1.7, y: 2.7, z: 0.05 }}
+				      position={{ x: -11, y: 1.5, z: 9 }}
+			          color="#774903"
+			    />
+		        </entity>
 				{Ground(SceneHelper.groundProps)}
 				{Entrance(SceneHelper.entranceProps)}
 				{Exit(SceneHelper.exitProps)}
